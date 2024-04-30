@@ -1,0 +1,53 @@
+{
+    "boxShadow": "none",
+    "widgetName": "mergeIntoInput",
+    "isFilterable": true,
+    "dynamicPropertyPathList": [
+        {"key": "onOptionChange"},
+        {"key": "onFilterUpdate"},
+        {"key": "sourceData"}
+    ],
+    "displayName": "Select",
+    "iconSVG": "/static/media/icon.bd99caba.svg",
+    "labelText": "Select Original Issue",
+    "topRow": 7,
+    "bottomRow": 14,
+    "parentRowSpace": 10,
+    "type": "SELECT_WIDGET",
+    "serverSideFiltering": true,
+    "hideCard": false,
+    "defaultOptionValue": "",
+    "animateLoading": true,
+    "parentColumnSpace": 10.162109375,
+    "dynamicTriggerPathList": [
+        {"key": "onOptionChange"},
+        {"key": "onFilterUpdate"}
+    ],
+    "leftColumn": 2,
+    "dynamicBindingPathList": [
+        {"key": "options"},
+        {"key": "accentColor"}
+    ],
+    "placeholderText": "Select an Issue",
+    "isDisabled": false,
+    "sourceData": "{{QueryManager.getSearchedIssues()}}",
+    "key": "stkreba4if",
+    "labelTextSize": "0.875rem",
+    "isRequired": false,
+    "rightColumn": 62,
+    "dynamicHeight": "FIXED",
+    "widgetId": "l30bcn8o73",
+    "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+    "optionValue": "value",
+    "isVisible": true,
+    "version": 1,
+    "parentId": "wvdcpjjuya",
+    "renderMode": "CANVAS",
+    "isLoading": false,
+    "optionLabel": "label",
+    "borderRadius": "0px",
+    "maxDynamicHeight": 9000,
+    "onOptionChange": "",
+    "onFilterUpdate": "{{merge_fetch_searched_issues.run()}}",
+    "minDynamicHeight": 4
+}

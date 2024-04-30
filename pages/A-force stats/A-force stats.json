@@ -1,0 +1,154 @@
+{
+  "unpublishedPage": {
+    "name": "A-force stats",
+    "slug": "a-force-stats",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1296,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 3160,
+          "containerStyle": "none",
+          "snapRows": 194,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 89,
+          "minHeight": 1950,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "A-force stats_fetch_queries_by_week",
+              "name": "fetch_queries_by_week",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "moment().startOf('week').subtract(12, 'weeks')"
+              ],
+              "timeoutInMillisecond": 30000
+            }
+          ],
+          [
+            {
+              "id": "A-force stats_fetch_queries_by_pending_doc",
+              "name": "fetch_queries_by_pending_doc",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "A-force stats_fetch_queries_by_added2docs",
+              "name": "fetch_queries_by_added2docs",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "A-force stats_fetch_queries_by_added2forum",
+              "name": "fetch_queries_by_added2forum",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "A-force stats_fetch_queries_by_author",
+              "name": "fetch_queries_by_author",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "FiltersManager.getDateRangeFilter('upvote.created_at')"
+              ],
+              "timeoutInMillisecond": 30000
+            },
+            {
+              "id": "A-force stats_fetch_queries_by_pods",
+              "name": "fetch_queries_by_pods",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "FiltersManager.getDateRangeFilter('upvote.created_at')"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "A-force stats_fetch_queries_by_channels",
+              "name": "fetch_queries_by_channels",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "FiltersManager.getDateRangeFilter('upvote.created_at')"
+              ],
+              "timeoutInMillisecond": 30000
+            }
+          ],
+          [
+            {
+              "id": "A-force stats_fetch_aforce_churn",
+              "name": "fetch_aforce_churn",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "FiltersManager.getDateRangeFilter('upvote.created_at')"
+              ],
+              "timeoutInMillisecond": 30000
+            },
+            {
+              "id": "A-force stats_fetch_queries_by_type",
+              "name": "fetch_queries_by_type",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "FiltersManager.getBacklogStatusFilter('comm_status')",
+                "FiltersManager.getDateRangeFilter('upvote.created_at')",
+                "FiltersManager.getResolvedStatusFilter('comm_status')"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "A-force stats_fetch_queries_count",
+              "name": "fetch_queries_count",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "FiltersManager.getDateRangeFilter('upvote.created_at')"
+              ],
+              "timeoutInMillisecond": 30000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "A-force stats",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": false
+  },
+  "deleted": false,
+  "gitSyncId": "64671372fb2607701307c379_64671372fb2607701307c37f"
+}

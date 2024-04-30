@@ -1,0 +1,100 @@
+{
+  "unpublishedPage": {
+    "name": "User Queries",
+    "slug": "user-queries",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1296,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 840,
+          "containerStyle": "none",
+          "snapRows": 194,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 89,
+          "minHeight": 880,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "User Queries_fetch_github_assignees",
+              "name": "fetch_github_assignees",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "User Queries_fetch_label_config",
+              "name": "fetch_label_config",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 50000
+            }
+          ],
+          [
+            {
+              "id": "User Queries_fetch_github_issues",
+              "name": "fetch_github_issues",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                " \"%\" + this.params.searchText + \"%\" "
+              ],
+              "timeoutInMillisecond": 50000
+            }
+          ],
+          [
+            {
+              "id": "User Queries_fetch_aforce_issue_comments",
+              "name": "fetch_aforce_issue_comments",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "Aforce_Issue_Table.selectedRow.id"
+              ],
+              "timeoutInMillisecond": 50000
+            }
+          ],
+          [
+            {
+              "id": "User Queries_fetch_aforce_queries",
+              "name": "fetch_aforce_queries",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "TableFilters.filter()",
+                "TableFilters.paginate()",
+                "TableFilters.sort()"
+              ],
+              "timeoutInMillisecond": 50000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "User Queries",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": false
+  },
+  "deleted": false,
+  "gitSyncId": "64671372fb2607701307c379_64671372fb2607701307c392"
+}

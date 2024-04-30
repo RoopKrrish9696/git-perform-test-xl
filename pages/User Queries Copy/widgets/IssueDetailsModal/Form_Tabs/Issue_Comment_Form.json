@@ -1,0 +1,288 @@
+{
+    "schema": {"__root_schema__": {
+        "labelTextSize": "0.875rem",
+        "identifier": "__root_schema__",
+        "isRequired": false,
+        "boxShadow": "none",
+        "isCustomField": false,
+        "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData))(Issue_Comment_Form.sourceData, Issue_Comment_Form.formData, Issue_Comment_Form.fieldState)}}",
+        "accentColor": "#03B365",
+        "dataType": "object",
+        "cellBorderRadius": "0px",
+        "accessor": "__root_schema__",
+        "isVisible": true,
+        "label": "",
+        "originalIdentifier": "__root_schema__",
+        "borderRadius": "0px",
+        "children": {
+            "customField1": {
+                "labelTextSize": "0.875rem",
+                "identifier": "customField1",
+                "isRequired": false,
+                "boxShadow": "none",
+                "isFilterable": false,
+                "isCustomField": true,
+                "defaultValue": "{{((sourceData, formData, fieldState) => (Aforce_Issue_Table.selectedRow.priority_status ?? 'None'))(Issue_Comment_Form.sourceData, Issue_Comment_Form.formData, Issue_Comment_Form.fieldState)}}",
+                "accentColor": "#03B365",
+                "dataType": "string",
+                "cellBorderRadius": "0px",
+                "accessor": "priorityStatus",
+                "isVisible": true,
+                "label": "Priority Status",
+                "serverSideFiltering": false,
+                "originalIdentifier": "customField1",
+                "borderRadius": "0px",
+                "children": {},
+                "options": "{{IssueConfigs.getPriorityOptions()}}",
+                "position": 4,
+                "isDisabled": false,
+                "sourceData": "",
+                "cellBoxShadow": "none",
+                "fieldType": "Select"
+            },
+            "author": {
+                "labelTextSize": "0.875rem",
+                "identifier": "author",
+                "isRequired": false,
+                "boxShadow": "none",
+                "isCustomField": false,
+                "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.author))(Issue_Comment_Form.sourceData, Issue_Comment_Form.formData, Issue_Comment_Form.fieldState)}}",
+                "accentColor": "#03B365",
+                "dataType": "string",
+                "cellBorderRadius": "0px",
+                "accessor": "author",
+                "isVisible": false,
+                "label": "Author",
+                "originalIdentifier": "author",
+                "borderRadius": "0px",
+                "children": {},
+                "isSpellCheck": false,
+                "iconAlign": "left",
+                "position": 1,
+                "isDisabled": false,
+                "sourceData": "pranav",
+                "cellBoxShadow": "none",
+                "fieldType": "Text Input"
+            },
+            "created_at": {
+                "labelTextSize": "0.875rem",
+                "identifier": "created_at",
+                "isRequired": false,
+                "boxShadow": "none",
+                "isCustomField": false,
+                "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.created_at))(Issue_Comment_Form.sourceData, Issue_Comment_Form.formData, Issue_Comment_Form.fieldState)}}",
+                "accentColor": "#03B365",
+                "dataType": "string",
+                "cellBorderRadius": "0px",
+                "accessor": "created_at",
+                "isVisible": false,
+                "label": "Created At",
+                "originalIdentifier": "created_at",
+                "borderRadius": "0px",
+                "children": {},
+                "isSpellCheck": false,
+                "iconAlign": "left",
+                "position": 2,
+                "isDisabled": false,
+                "sourceData": "3rd Apr 22",
+                "cellBoxShadow": "none",
+                "fieldType": "Text Input"
+            },
+            "comment": {
+                "labelTextSize": "0.875rem",
+                "identifier": "comment",
+                "isRequired": true,
+                "boxShadow": "none",
+                "isCustomField": false,
+                "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.comment))(Issue_Comment_Form.sourceData, Issue_Comment_Form.formData, Issue_Comment_Form.fieldState)}}",
+                "accentColor": "#03B365",
+                "dataType": "string",
+                "cellBorderRadius": "0px",
+                "accessor": "comment",
+                "isVisible": true,
+                "label": "Comment",
+                "originalIdentifier": "comment",
+                "borderRadius": "0px",
+                "children": {},
+                "isSpellCheck": false,
+                "iconAlign": "left",
+                "position": 0,
+                "isDisabled": false,
+                "sourceData": "temp",
+                "cellBoxShadow": "none",
+                "fieldType": "Multiline Text Input"
+            },
+            "id": {
+                "labelTextSize": "0.875rem",
+                "identifier": "id",
+                "isRequired": false,
+                "boxShadow": "none",
+                "isCustomField": false,
+                "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.id))(Issue_Comment_Form.sourceData, Issue_Comment_Form.formData, Issue_Comment_Form.fieldState)}}",
+                "accentColor": "#03B365",
+                "dataType": "number",
+                "cellBorderRadius": "0px",
+                "accessor": "id",
+                "isVisible": false,
+                "label": "Id",
+                "originalIdentifier": "id",
+                "borderRadius": "0px",
+                "children": {},
+                "isSpellCheck": false,
+                "iconAlign": "left",
+                "position": 3,
+                "isDisabled": false,
+                "sourceData": 5,
+                "cellBoxShadow": "none",
+                "fieldType": "Number Input"
+            }
+        },
+        "position": -1,
+        "isDisabled": false,
+        "sourceData": {
+            "author": "pranav",
+            "created_at": "3rd Apr 22",
+            "comment": "temp",
+            "id": 5
+        },
+        "cellBoxShadow": "none",
+        "fieldType": "Object"
+    }},
+    "boxShadow": "none",
+    "widgetName": "Issue_Comment_Form",
+    "submitButtonStyles": {
+        "boxShadow": "none",
+        "borderRadius": "0.375rem",
+        "buttonColor": "#03B365",
+        "buttonVariant": "PRIMARY"
+    },
+    "dynamicPropertyPathList": [{"key": "schema.__root_schema__.children.date_of_birth.defaultValue"}],
+    "displayName": "JSON Form",
+    "iconSVG": "/static/media/icon.6bacf7df.svg",
+    "onSubmit": "{{QueryManager.insertComment()}}",
+    "topRow": 0,
+    "bottomRow": 62,
+    "fieldLimitExceeded": false,
+    "parentRowSpace": 10,
+    "title": "",
+    "type": "JSON_FORM_WIDGET",
+    "hideCard": false,
+    "animateLoading": true,
+    "parentColumnSpace": 9.6474609375,
+    "dynamicTriggerPathList": [{"key": "onSubmit"}],
+    "leftColumn": 0,
+    "dynamicBindingPathList": [
+        {"key": "schema.__root_schema__.defaultValue"},
+        {"key": "schema.__root_schema__.children.comment.defaultValue"},
+        {"key": "schema.__root_schema__.children.author.defaultValue"},
+        {"key": "schema.__root_schema__.children.created_at.defaultValue"},
+        {"key": "schema.__root_schema__.children.id.defaultValue"},
+        {"key": "schema.__root_schema__.children.customField1.options"},
+        {"key": "schema.__root_schema__.children.customField1.defaultValue"}
+    ],
+    "sourceData": "{}",
+    "showReset": false,
+    "resetButtonLabel": "Reset",
+    "key": "grh7qk4klo",
+    "labelTextSize": "0.875rem",
+    "backgroundColor": "#fff",
+    "rightColumn": 64,
+    "dynamicHeight": "FIXED",
+    "autoGenerateForm": false,
+    "widgetId": "d5p2g9wjbc",
+    "resetButtonStyles": {
+        "boxShadow": "none",
+        "borderRadius": "0px",
+        "buttonColor": "#03B365",
+        "buttonVariant": "SECONDARY"
+    },
+    "isVisible": true,
+    "version": 1,
+    "parentId": "tpwvluhxwl",
+    "renderMode": "CANVAS",
+    "isLoading": false,
+    "scrollContents": true,
+    "fixedFooter": true,
+    "submitButtonLabel": "Add",
+    "childStylesheet": {
+        "CHECKBOX": {
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "ARRAY": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+            "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "cellBoxShadow": "none"
+        },
+        "CURRENCY_INPUT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "DATEPICKER": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "PHONE_NUMBER_INPUT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "OBJECT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "cellBoxShadow": "none"
+        },
+        "MULTISELECT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "SELECT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "NUMBER_INPUT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "PASSWORD_INPUT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "EMAIL_INPUT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "RADIO_GROUP": {
+            "boxShadow": "none",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "SWITCH": {
+            "boxShadow": "none",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "TEXT_INPUT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "MULTILINE_TEXT_INPUT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        }
+    },
+    "disabledWhenInvalid": true,
+    "borderRadius": "0px",
+    "maxDynamicHeight": 9000,
+    "minDynamicHeight": 4
+}

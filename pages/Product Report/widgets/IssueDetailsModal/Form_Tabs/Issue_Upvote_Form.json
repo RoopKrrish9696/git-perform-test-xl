@@ -1,0 +1,245 @@
+{
+    "schema": {"__root_schema__": {
+        "labelTextSize": "0.875rem",
+        "identifier": "__root_schema__",
+        "isRequired": false,
+        "boxShadow": "none",
+        "isCustomField": false,
+        "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData))(Issue_Upvote_Form.sourceData, Issue_Upvote_Form.formData, Issue_Upvote_Form.fieldState)}}",
+        "accentColor": "#03B365",
+        "dataType": "object",
+        "cellBorderRadius": "0px",
+        "accessor": "__root_schema__",
+        "isVisible": true,
+        "label": "",
+        "originalIdentifier": "__root_schema__",
+        "borderRadius": "0px",
+        "children": {
+            "issue_labels": {
+                "labelTextSize": "0.875rem",
+                "identifier": "issue_labels",
+                "isRequired": true,
+                "boxShadow": "none",
+                "isFilterable": true,
+                "isCustomField": false,
+                "defaultValue": "{{((sourceData, formData, fieldState) => (Aforce_Issue_Table.selectedRow.labels))(Issue_Upvote_Form.sourceData, Issue_Upvote_Form.formData, Issue_Upvote_Form.fieldState)}}",
+                "accentColor": "#03B365",
+                "dataType": "array",
+                "cellBorderRadius": "0px",
+                "accessor": "issue_labels",
+                "isVisible": true,
+                "label": "Issue Labels",
+                "serverSideFiltering": true,
+                "originalIdentifier": "issue_labels",
+                "borderRadius": "0px",
+                "children": {},
+                "options": "{{GithubManager.getGithubLabels()}}",
+                "onFilterUpdate": "{{((sourceData, formData, fieldState) => (GithubManager.searchGithubLabels(fieldState.issue_labels?.filterText || '')))(Issue_Upvote_Form.sourceData, Issue_Upvote_Form.formData, Issue_Upvote_Form.fieldState)}}",
+                "position": 2,
+                "isDisabled": false,
+                "sourceData": [],
+                "cellBoxShadow": "none",
+                "fieldType": "Multiselect"
+            },
+            "upvote_link": {
+                "labelTextSize": "0.875rem",
+                "identifier": "upvote_link",
+                "isRequired": true,
+                "boxShadow": "none",
+                "isCustomField": false,
+                "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.upvote_link))(Issue_Upvote_Form.sourceData, Issue_Upvote_Form.formData, Issue_Upvote_Form.fieldState)}}",
+                "accentColor": "#03B365",
+                "dataType": "string",
+                "cellBorderRadius": "0px",
+                "accessor": "upvote_link",
+                "isVisible": true,
+                "label": "Link",
+                "originalIdentifier": "upvote_link",
+                "borderRadius": "0px",
+                "children": {},
+                "isSpellCheck": false,
+                "iconAlign": "left",
+                "position": 0,
+                "isDisabled": false,
+                "sourceData": "",
+                "cellBoxShadow": "none",
+                "fieldType": "Text Input"
+            },
+            "upvote_comment": {
+                "labelTextSize": "0.875rem",
+                "identifier": "upvote_comment",
+                "isRequired": true,
+                "boxShadow": "none",
+                "isCustomField": false,
+                "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.upvote_comment))(Issue_Upvote_Form.sourceData, Issue_Upvote_Form.formData, Issue_Upvote_Form.fieldState)}}",
+                "accentColor": "#03B365",
+                "dataType": "string",
+                "cellBorderRadius": "0px",
+                "accessor": "upvote_comment",
+                "isVisible": true,
+                "label": "Comment",
+                "originalIdentifier": "upvote_comment",
+                "borderRadius": "0px",
+                "children": {},
+                "isSpellCheck": false,
+                "iconAlign": "left",
+                "placeholderText": "{{((sourceData, formData, fieldState) => (`Short Summary`))(Issue_Upvote_Form.sourceData, Issue_Upvote_Form.formData, Issue_Upvote_Form.fieldState)}}",
+                "position": 1,
+                "isDisabled": false,
+                "sourceData": "",
+                "cellBoxShadow": "none",
+                "fieldType": "Multiline Text Input"
+            }
+        },
+        "position": -1,
+        "isDisabled": false,
+        "sourceData": {
+            "issue_labels": [],
+            "upvote_link": "",
+            "upvote_comment": ""
+        },
+        "cellBoxShadow": "none",
+        "fieldType": "Object"
+    }},
+    "boxShadow": "none",
+    "widgetName": "Issue_Upvote_Form",
+    "submitButtonStyles": {
+        "boxShadow": "none",
+        "borderRadius": "0.375rem",
+        "buttonColor": "#03B365",
+        "buttonVariant": "PRIMARY"
+    },
+    "dynamicPropertyPathList": [
+        {"key": "schema.__root_schema__.children.date_of_birth.defaultValue"},
+        {"key": "schema.__root_schema__.children.issue_labels.onFilterUpdate"}
+    ],
+    "displayName": "JSON Form",
+    "iconSVG": "/static/media/icon.6bacf7df.svg",
+    "onSubmit": "{{QueryManager.upsertUpvote()}}",
+    "topRow": 0,
+    "bottomRow": 62,
+    "fieldLimitExceeded": false,
+    "parentRowSpace": 10,
+    "title": "",
+    "type": "JSON_FORM_WIDGET",
+    "hideCard": false,
+    "animateLoading": true,
+    "parentColumnSpace": 9.6474609375,
+    "dynamicTriggerPathList": [
+        {"key": "schema.__root_schema__.children.issue_labels.onFilterUpdate"},
+        {"key": "onSubmit"}
+    ],
+    "leftColumn": 0,
+    "dynamicBindingPathList": [
+        {"key": "schema.__root_schema__.children.issue_labels.defaultValue"},
+        {"key": "schema.__root_schema__.children.issue_labels.options"},
+        {"key": "schema.__root_schema__.children.upvote_comment.placeholderText"},
+        {"key": "schema.__root_schema__.children.upvote_comment.defaultValue"},
+        {"key": "schema.__root_schema__.children.upvote_link.defaultValue"}
+    ],
+    "sourceData": "{}",
+    "showReset": false,
+    "resetButtonLabel": "Reset",
+    "key": "vrt538zhlw",
+    "labelTextSize": "0.875rem",
+    "backgroundColor": "#fff",
+    "rightColumn": 64,
+    "dynamicHeight": "FIXED",
+    "autoGenerateForm": false,
+    "widgetId": "062azubt1x",
+    "resetButtonStyles": {
+        "boxShadow": "none",
+        "borderRadius": "0px",
+        "buttonColor": "#03B365",
+        "buttonVariant": "SECONDARY"
+    },
+    "isVisible": true,
+    "version": 1,
+    "parentId": "5rzg0lz70y",
+    "renderMode": "CANVAS",
+    "isLoading": false,
+    "scrollContents": true,
+    "fixedFooter": true,
+    "submitButtonLabel": "Add",
+    "childStylesheet": {
+        "CHECKBOX": {
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "ARRAY": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+            "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "cellBoxShadow": "none"
+        },
+        "CURRENCY_INPUT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "DATEPICKER": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "PHONE_NUMBER_INPUT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "OBJECT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "cellBoxShadow": "none"
+        },
+        "MULTISELECT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "SELECT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "NUMBER_INPUT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "PASSWORD_INPUT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "EMAIL_INPUT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "RADIO_GROUP": {
+            "boxShadow": "none",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "SWITCH": {
+            "boxShadow": "none",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "TEXT_INPUT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        },
+        "MULTILINE_TEXT_INPUT": {
+            "boxShadow": "none",
+            "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+            "accentColor": "{{appsmith.theme.colors.primaryColor}}"
+        }
+    },
+    "disabledWhenInvalid": true,
+    "borderRadius": "0px",
+    "maxDynamicHeight": 9000,
+    "minDynamicHeight": 4
+}

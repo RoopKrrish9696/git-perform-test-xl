@@ -1,0 +1,79 @@
+{
+  "unpublishedPage": {
+    "name": "deprecated_Roster",
+    "slug": "deprecated-roster",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1176,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 1290,
+          "containerStyle": "none",
+          "snapRows": 88,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 89,
+          "minHeight": 890,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "deprecated_Roster_fetch_hero",
+              "name": "fetch_hero",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "appsmith.user.email"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "deprecated_Roster_fetch_hero_roster",
+              "name": "fetch_hero_roster",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "moment().startOf(\"week\").add(1, \"days\")"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "deprecated_Roster_fetch_hero_stats",
+              "name": "fetch_hero_stats",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "moment(quarter_select.selectedOptionValue).format(\"YYYY-MM-DD\")",
+                "moment(quarter_select.selectedOptionValue).add(3,\"months\").format(\"YYYY-MM-DD\")"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "deprecated_Roster",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": true
+  },
+  "deleted": false,
+  "gitSyncId": "64671372fb2607701307c379_64671372fb2607701307c37e"
+}

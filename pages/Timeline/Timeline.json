@@ -1,0 +1,82 @@
+{
+  "unpublishedPage": {
+    "name": "Timeline",
+    "slug": "timeline",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1642,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 800,
+          "containerStyle": "none",
+          "snapRows": 87,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 89,
+          "minHeight": 1760,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Timeline_TimelineManager.refreshData",
+              "name": "TimelineManager.refreshData",
+              "collectionId": "Timeline_TimelineManager",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  if (TypeFilter.selectedOptionValue === 'MY_TIMELINE') {\n    await fetch_my_timeline.run();\n    await fetch_my_timeline_votes.run();\n  } else {\n    await fetch_timeline.run();\n    await fetch_timeline_votes.run();\n  }\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Timeline_fetch_searched_issues",
+              "name": "fetch_searched_issues",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                " \"%\" + mergeIntoInput.filterText + \"%\" "
+              ],
+              "timeoutInMillisecond": 50000
+            }
+          ],
+          [
+            {
+              "id": "Timeline_fetch_my_timeline",
+              "name": "fetch_my_timeline",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "appsmith.user.email",
+                "QueryManager.getTimeLineCondition()",
+                "Aforce_Timeline_Table.pageSize",
+                "(Aforce_Timeline_Table.pageNo - 1) * Aforce_Timeline_Table.pageSize"
+              ],
+              "timeoutInMillisecond": 50000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Timeline",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": false
+  },
+  "deleted": false,
+  "gitSyncId": "64671372fb2607701307c379_64671372fb2607701307c384"
+}
