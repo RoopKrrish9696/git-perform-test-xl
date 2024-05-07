@@ -14,7 +14,7 @@
         {"key": "boxShadow"}
     ],
     "needsHeightForContent": true,
-    "leftColumn": 4,
+    "leftColumn": 19,
     "delimiter": ",",
     "defaultSelectedRowIndex": 0,
     "flexVerticalAlignment": "start",
@@ -61,6 +61,7 @@
     },
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
     "columnUpdatedAt": 1715062097814,
+    "originalBottomRow": 61,
     "defaultSelectedRowIndices": [0],
     "needsErrorInfo": false,
     "mobileBottomRow": 58,
@@ -80,7 +81,7 @@
     "key": "mbaiak20hg",
     "canFreezeColumn": true,
     "isDeprecated": false,
-    "rightColumn": 38,
+    "rightColumn": 53,
     "textSize": "0.875rem",
     "thumbnailSVG": "https://release-appcdn.appsmith.com/static/media/thumbnail.d0492f06681daa69baf92b07d3829dfc.svg",
     "widgetId": "9ilz680u2y",
@@ -94,6 +95,7 @@
     "horizontalAlignment": "LEFT",
     "isVisibleSearch": true,
     "responsiveBehavior": "fill",
+    "originalTopRow": 33,
     "mobileLeftColumn": 4,
     "isVisiblePagination": true,
     "verticalAlignment": "CENTER"
